@@ -1,7 +1,6 @@
-version: '3.1'
+version: "3.1"
 
 services:
-
   drupal:
     ports:
       - "80:80"
@@ -10,14 +9,14 @@ services:
       - drupal-profiles:/var/www/html/profiles
       - drupal-sites:/var/www/html/sites
       - drupal-themes:/var/www/html/themes
- 
+
   postgres:
     environment:
       - POSTGRES_PASSWORD_FILE=/run/secrets/psql-pw
     secrets:
       - psql-pw
     volumes:
-      - drupal-data:/var/lib/postgresql/data
+      - drupal-data:/var/lib /postgresql/data
 
 volumes:
   drupal-data:
