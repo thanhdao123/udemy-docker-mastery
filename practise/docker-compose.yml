@@ -1,0 +1,18 @@
+version: "3.7"
+
+services:
+  firefly:
+    image: bretfisher/browncoat:v1
+    deploy:
+      placement:
+        constraints: -noe.role == manager
+      replicas: 5
+    ports:
+      - "80:80"
+    networks:
+      - "verse"
+
+networks:
+  verse:
+    ipam:
+      driver: overlay
