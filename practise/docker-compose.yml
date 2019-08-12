@@ -16,3 +16,4 @@ services:
 networks:
   verse:
     driver: overlay
+    attachable: true
