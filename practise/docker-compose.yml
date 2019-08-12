@@ -10,7 +10,7 @@ services:
       replicas: 5
     ports:
       - "80:80"
-    enviroment:
+    environment:
       - "DEPLAY_STARTUP:5000"
     networks:
       - "verse"
