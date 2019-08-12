@@ -6,10 +6,12 @@ services:
     deploy:
       placement:
         constraints:
-          - node.role == worker
+          - node.hostname == node1
       replicas: 5
     ports:
       - "80:80"
+    enviroment:
+      - "DEPLAY_STARTUP:5000"
     networks:
       - "verse"
 
