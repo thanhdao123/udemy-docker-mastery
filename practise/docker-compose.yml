@@ -5,7 +5,8 @@ services:
     image: bretfisher/browncoat:v1
     deploy:
       placement:
-        constraints: -noe.role == node1
+        constraints:
+          - node.role == node1
       replicas: 5
     ports:
       - "80:80"
