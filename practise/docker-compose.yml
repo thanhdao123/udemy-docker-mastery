@@ -6,7 +6,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == node1
+          - node.role == worker
       replicas: 5
     ports:
       - "80:80"
