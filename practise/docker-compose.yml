@@ -1,6 +1,16 @@
 version: "3.7"
 
 services:
+  viz:
+    image: bretfisher/visualizer
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock"
+    ports:
+      - "8086:8080"
+    deploy:
+      placement:
+        constraints:
+          - node.role == manager
   firefly:
     image: bretfisher/browncoat:v1
     deploy:
